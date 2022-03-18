@@ -8,7 +8,7 @@
 .chef-card-image{
   img{
     height: 100%;
-    width: 120px;
+    width: 130px;
     border-radius: 5px;
     box-shadow: 0 3px 6px var(--shadow-color);
   }
@@ -55,5 +55,8 @@
 @media screen and (max-width: 768px) {
   .chef-card{
     box-shadow: 0 5px 10px var(--shadow-color);
+  font-size:.8em
   }
+
+
 }

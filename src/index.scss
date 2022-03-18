@@ -171,16 +171,20 @@ img {
     margin: .75em;
   }
 
-  .section.improve-skills{
-    .btn {
+  .section.improve-skills .btn{
       display:block;
       margin-left: 50%;
       transform: translateX(-50%);
+
+  }
+
+  .options-container{
+    .btn{ 
+      font-size: 0.7em
     }
   }
 
   .footer{
-   // display: block;
    grid-template-columns: repeat(4, 1fr);
    .footer-section:nth-child(1){
      grid-column: span 4;
