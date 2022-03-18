@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const ChangeTheme = ({ colorOption, theme, changeTheme, option, type }) => {
+const ChangeTheme = ({ colorOption, theme, changeTheme, option, type}) => {
   return (
     <>
       {type ? (

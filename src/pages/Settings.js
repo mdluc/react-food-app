@@ -1,13 +1,30 @@
 import { useState, useEffect } from "react";
 import SettingContainer from "../components/ChangeTheme/SettingsContainer";
 import ChangeTheme from "../components/ChangeTheme/ChangeTheme";
-import { colorOption, primaryColors, fontSizes, animationSpeeds } from "../components/ChangeTheme/datas";
+import {
+  colorOption,
+  primaryColors,
+  fontSizes,
+  animationSpeeds,
+} from "../components/ChangeTheme/datas";
 
 const Settings = () => {
   const [theme, setTheme] = useState(0);
   const [primaryColor, setPrimaryColor] = useState(0);
   const [fontSize, setFontSize] = useState(1);
   const [animationSpeed, setAnimationSpeed] = useState(1);
+
+  const titles = [
+    "Preferred theme",
+    "Preferred color",
+    "Font Size",
+    "Animation Speed",
+  ];
+  const type = [true, true, false, false];
+  let states = [theme, primaryColor, fontSize, animationSpeed];
+
+  const datas = [colorOption, primaryColors, fontSizes, animationSpeeds];
+
   const [settings, setSettings] = useState({
     "--background-color": "#fff",
     "--background-light": "#fff",
@@ -50,7 +67,7 @@ const Settings = () => {
     setSettings(_settings);
   };
 
-  const changeTheme = (i) => {
+  const changeThemeColor = (i) => {
     const _theme = { ...themes[i] };
     setTheme(i === 0 ? 0 : 1);
     let _settings = { ...settings };
@@ -76,62 +93,29 @@ const Settings = () => {
     setSettings(_settings);
   };
 
-  const titles = [
-    "Preferred theme",
-    "Preferred color",
-    "Font Size",
-    "Animation Speed"
-  ]
-const functionArray = [changeTheme, changeColor, changeFontSize,changeAnimationSpeed ]
-const data = [colorOption, primaryColors, fontSizes, animationSpeeds, ]
+  const arrayOfFunctions = [
+    changeThemeColor,
+    changeColor,
+    changeFontSize,
+    changeAnimationSpeed,
+  ];
+  
   return (
     <div>
-      <SettingContainer title="Preferred theme">
-        {colorOption.map((item, index) => (
-          <ChangeTheme
-            key={index}
-            option={index}
-            colorOption={item}
-            changeTheme={() => changeTheme(index)}
-            theme={theme}
-            type
-          />
-        ))}
-      </SettingContainer>
-      <SettingContainer title="Preferred color">
-        {primaryColors.map((item, index) => (
-          <ChangeTheme
-            key={index}
-            colorOption={item}
-            option={index}
-            changeTheme={() => changeColor(index)}
-            theme={primaryColor}
-            type
-          />
-        ))}
-      </SettingContainer>
-      <SettingContainer title="Font size">
-        {fontSizes.map((item, index) => (
-          <ChangeTheme
-            key={index}
-            colorOption={item}
-            option={index}
-            changeTheme={() => changeFontSize(index)}
-            theme={fontSize}
-          />
-        ))}
-      </SettingContainer>
-      <SettingContainer title="Animation speed">
-        {animationSpeeds.map((item, index) => (
-          <ChangeTheme
-            key={index}
-            colorOption={item}
-            option={index}
-            changeTheme={() => changeAnimationSpeed(index)}
-            theme={animationSpeed}
-          />
-        ))}
-      </SettingContainer>
+      {datas.map((data, idx) => (
+        <SettingContainer key={idx} title={titles[idx]}>
+          {data.map((item, index) => (
+            <ChangeTheme
+              key={index}
+              option={index}
+              colorOption={item}
+              changeTheme={() => arrayOfFunctions[idx](index)}
+              theme={states[idx]}
+              type={type[idx]}
+            />
+          ))}
+        </SettingContainer>
+      ))}
     </div>
   );
 };
