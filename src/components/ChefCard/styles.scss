@@ -53,15 +53,23 @@
 }
 
 @media screen and (max-width:1050px) {
-  .chef-card .chef-card-info .chef-icons {
-    font-size: 1em;
+  .chef-card .chef-card-info{
+    font-size: .8em;
 }
 }
 
 @media screen and (max-width: 768px) {
   .chef-card{
     box-shadow: 0 5px 10px var(--shadow-color);
-    
   }
+  .chef-card .chef-card-info .chef-icons {
+    font-size: 1em;
+}
 
+}
+
+@media screen and (max-width: 480px) {
+  .chef-card .chef-card-info .chef-icons {
+    font-size: 1em;
+}
 }

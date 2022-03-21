@@ -20,7 +20,7 @@ export const primaryColors = [
     },
     {
       title: "Large",
-      value: "20px",
+      value: "18px",
     },
   ];
 

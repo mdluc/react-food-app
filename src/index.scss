@@ -147,13 +147,20 @@ img {
   .container{
     padding-inline: 18vw;
   }
+  
 }
 @media screen and (max-width: 1050px){
   .container{
     padding-inline: 12vw;
   }
+  .chef-card .chef-card-info .chef-icons {
+    font-size: 1em;
+}
 }
 @media screen and (max-width: 768px){
+  .chef-card .chef-card-info .chef-icons {
+    font-size: 1em;
+}
   .section{
     .col{
       width: 100%;
@@ -195,6 +202,7 @@ img {
     text-align: center;
   }
  }
+
 @media screen and (max-width: 480px){
   .container{
     padding-inline: 3vw;
