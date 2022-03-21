@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import SettingContainer from "../components/ChangeTheme/SettingsContainer";
+import SettingContainer from "../components/SettingsContainer/SettingsContainer";
 import ChangeTheme from "../components/ChangeTheme/ChangeTheme";
 import {
   colorOption,
   primaryColors,
   fontSizes,
   animationSpeeds,
-} from "../components/ChangeTheme/datas";
+} from "../db/datas";
 
 const Settings = () => {
   const [theme, setTheme] = useState(0);
