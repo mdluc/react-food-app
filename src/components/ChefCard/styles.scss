@@ -24,13 +24,13 @@
     padding-top: .5em;
     
     .chef-card-name{
-      font-size:1.5em;
+      font-size:1.3em;
       font-weight: bold;
       color: var(--text-color);
     }
 
     .chef-card-recipes-count, .chef-cuisine{
-      font-size: 1.2em;
+      font-size: 1em;
       color: var(--text-light);
     }
 
@@ -52,11 +52,16 @@
   }
 }
 
+@media screen and (max-width:1050px) {
+  .chef-card .chef-card-info .chef-icons {
+    font-size: 1em;
+}
+}
+
 @media screen and (max-width: 768px) {
   .chef-card{
     box-shadow: 0 5px 10px var(--shadow-color);
-  font-size:.8em
+    
   }
-
 
 }
